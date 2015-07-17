@@ -7,9 +7,10 @@ use App\Drink;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Response;
 
-abstract class DrinkController extends BaseController
+class DrinkController extends BaseController
 {
     use DispatchesJobs, ValidatesRequests;
 
@@ -39,7 +40,6 @@ abstract class DrinkController extends BaseController
     private static function getUniqueCategories()
     {
         $drinks = Drink::all();
-
 
         $categories = [];
         foreach ($drinks as $drink) {
