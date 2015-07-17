@@ -29,10 +29,10 @@ var drink = angular.module('drink', ['ngRoute', 'ngResource', 'ngStorage'])
 	function($scope, $localStorage, $resource, $location) {
 		$scope.stor = $localStorage;
 
-		var Categories = $resource('drinks/categories');
+		var Categories = $resource('/backend/drinks/categories');
 		$scope.categories = Categories.query();
 
-		var Drinks = $resource('drinks');
+		var Drinks = $resource('/backend/drinks');
 		$scope.drinks = Drinks.query();
 
 		$scope.go = function(type) {
@@ -52,7 +52,7 @@ var drink = angular.module('drink', ['ngRoute', 'ngResource', 'ngStorage'])
 
 .controller('StartCtrl', ['$scope',
 	function($scope) {
-		var Random = $resource('random');
+		var Random = $resource('/backend/random');
 		$scope.random = Drinks.get({
 			category: $scope.stor.d
 		});
