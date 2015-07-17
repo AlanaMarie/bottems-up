@@ -1,4 +1,4 @@
-var drink = angular.module('drink', ['ngRoute','ngStorage'])
+var drink = angular.module('drink', ['ngRoute', 'ngResource', 'ngStorage'])
 
 .config(['$routeProvider',
 	function($routeProvider) {
@@ -7,12 +7,53 @@ var drink = angular.module('drink', ['ngRoute','ngStorage'])
 			templateUrl: 'partials/home.html',
 			controller: 'HomeCtrl'
 		}).
+		when('/settings', {
+			templateUrl: 'partials/settings.html',
+			controller: 'SettingsCtrl'
+		}).
+		when('/start', {
+			templateUrl: 'partials/start.html',
+			controller: 'StartCtrl'
+		}).
+		when('/list', {
+			templateUrl: 'partials/list.html',
+			controller: 'ListCtrl'
+		}).
 		otherwise({
 			redirectTo: '/'
 		});
 	}
 ])
 
-.controller('HomeCtrl', ['$scope','$localStorage', function($scope, $localStorage) {
-	$scope.stor = $localStorage;
-}]);
+.controller('MainCtrl', ['$scope', '$localStorage', '$resource',
+	function($scope, $localStorage, $resource) {
+		$scope.stor = $localStorage;
+
+		var Drinks = $resource('drinks.json');
+		$scope.drinks = Drinks.query();
+	}
+])
+
+.controller('HomeCtrl', ['$scope',
+	function($scope) {
+
+	}
+])
+
+.controller('StartCtrl', ['$scope',
+	function($scope) {
+
+	}
+])
+
+.controller('SettingsCtrl', ['$scope',
+	function($scope) {
+
+	}
+])
+
+.controller('ListCtrl', ['$scope',
+	function($scope) {
+
+	}
+]);

@@ -1,12 +1,59 @@
+// Imports
+@import "../../bower_components/normalize.css/normalize.css";
+@import "./responsive";
+html {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+// Variables
+$gutter: 1em;
+$brand-fb: #3b5998;
+$brand-tw: #4099ff;
+
 // css here
 body {
 	background: #fff;
 	font-family: sans-serif;
 }
-
-p {
+.container {
+	padding: $gutter;
+	display: flex;
+	flex-direction: column;
 	font-size: 2em;
-	small {
-		font-family: 1.5em;
+	&>p {
+		flex: 1 0 auto;
+		margin: 0;
 	}
+}
+.logo {
+	width: 50%;
+	height: 2em;
+	background: #ddd;
+	border: 0;
+	margin: 0 auto;
+	display: block;
+}
+.btn {
+	width: 100%;
+	background: #666;
+	color: #fff;
+	outline: none;
+	border: 0;
+	line-height: 2em;
+}
+.active.btn-fb {
+	background: $brand-fb;
+}
+.active.btn-tw {
+	background: $brand-tw;
+}
+.inp {
+	padding: 0 $gutter/2;
+	background: #eee;
+	color: #000;
 }

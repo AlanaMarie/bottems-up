@@ -17,6 +17,7 @@
     "angular": "~1.4.3",
     "angular-route": "~1.4.3",
     "angular-resource": "~1.4.3",
-    "ngstorage": "~0.3.7"
+    "ngstorage": "~0.3.7",
+    "normalize.css": "~3.0.3"
   }
 }
