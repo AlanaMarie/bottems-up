@@ -25,15 +25,20 @@ var drink = angular.module('drink', ['ngRoute', 'ngResource', 'ngStorage'])
 	}
 ])
 
-.controller('MainCtrl', ['$scope', '$localStorage', '$resource',
-	function($scope, $localStorage, $resource) {
+.controller('MainCtrl', ['$scope', '$localStorage', '$resource', '$location',
+	function($scope, $localStorage, $resource, $location) {
 		$scope.stor = $localStorage;
 
 		var Categories = $resource('drinks/categories');
 		$scope.categories = Categories.query();
 
-		var Drinks = $resource('drinks.json');
+		var Drinks = $resource('drinks');
 		$scope.drinks = Drinks.query();
+
+		$scope.go = function(path) {
+			$scope.stor.user.type = path;
+			$location.path('/settings');
+		};
 	}
 ])
 
@@ -45,7 +50,10 @@ var drink = angular.module('drink', ['ngRoute', 'ngResource', 'ngStorage'])
 
 .controller('StartCtrl', ['$scope',
 	function($scope) {
-
+		var Random = $resource('random');
+		$scope.random = Drinks.get({
+			category: $scope.stor.d
+		});
 	}
 ])
 
