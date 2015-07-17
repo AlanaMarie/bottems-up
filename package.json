@@ -1,0 +1,9 @@
+{
+  "version": "0.0.0",
+  "description": "ultimatedrinker",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-connect": "*",
+    "gulp-sass": "*"
+  }
+}
