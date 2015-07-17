@@ -1,7 +1,7 @@
 ## Uses
 
 Users can post what they've drunk with photo.
-Users get a random drink every hour per category. 
+Users get a random drink every hour per category.
 
 The app can get tweets from twitter
 The app can store data based on twitter handles
