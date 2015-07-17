@@ -11,9 +11,10 @@ html {
 }
 
 // Variables
-$gutter: 1em;
+$gutter: 25px;
 $brand-fb: #3b5998;
 $brand-tw: #4099ff;
+$brand: #06f;
 
 // css here
 body {
@@ -21,39 +22,63 @@ body {
 	font-family: sans-serif;
 }
 .container {
+	background: url(../img/background.png);
+	background-size:100% 100% ;
 	padding: $gutter;
 	display: flex;
-	flex-direction: column;
-	font-size: 2em;
+	align-items: center;
+	justify-content: center;
 	&>p {
 		flex: 1 0 auto;
 		margin: 0;
 	}
 }
 .logo {
-	width: 50%;
-	height: 2em;
-	background: #ddd;
+	max-width: 100%;
+	max-height: 30vh;
 	border: 0;
-	margin: 0 auto;
+	margin: 0 auto 1em;
 	display: block;
 }
 .btn {
+	display: block;
+	text-align: center;
 	width: 100%;
-	background: #666;
-	color: #fff;
+	background: #fff;
+	color: #000;
 	outline: none;
 	border: 0;
-	line-height: 2em;
+	line-height: 40px;
+	height: 40px;
+	text-decoration: none;
 }
-.active.btn-fb {
+.active {
+	background: $brand;
+	color: #fff;
+}
+.btn-fb {
 	background: $brand-fb;
+	color: #fff;
 }
-.active.btn-tw {
+.btn-tw {
 	background: $brand-tw;
+	color: #fff;
+}
+.btn-default {
+	border: 1px solid #ccc;
 }
 .inp {
 	padding: 0 $gutter/2;
+	text-align: left;
 	background: #eee;
 	color: #000;
+}
+label {
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+}
+.panel{
+	border: 5px solid #000;
+	background: #fff;
+	padding: 10px;
 }

@@ -1,13 +1,8 @@
-
-<label>
-	Account handle
-	<input ng-model="stor.user.handle">
-</label>
-
-<label>
-	Account type
-	<select ng-model="stor.user.type">
-		<option value="twitter">Twitter</option>
-		<option value="facebook">Facebook</option>
-	</select>
-</label>
+<p>
+	<button type="button" ng-click="stor.d=1" class="btn" ng-class="{active:stor.d==1}">Beer</button>
+	<button type="button" ng-click="stor.d=2" class="btn" ng-class="{active:stor.d==2}">Shots</button>
+	<button type="button" ng-click="stor.d=3" class="btn" ng-class="{active:stor.d==3}">Ghentian</button>
+</p>
+<p>
+	<a class="btn" ng-href="#/start">Next</a>
+</p>

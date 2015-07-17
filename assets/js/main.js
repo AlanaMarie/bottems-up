@@ -29,6 +29,9 @@ var drink = angular.module('drink', ['ngRoute', 'ngResource', 'ngStorage'])
 	function($scope, $localStorage, $resource) {
 		$scope.stor = $localStorage;
 
+		var Categories = $resource('drinks/categories');
+		$scope.categories = Categories.query();
+
 		var Drinks = $resource('drinks.json');
 		$scope.drinks = Drinks.query();
 	}
