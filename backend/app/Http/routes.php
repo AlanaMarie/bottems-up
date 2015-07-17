@@ -14,3 +14,18 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/drinks/', [
+    'as' => 'drinks.list',
+    'uses' => 'DrinkController@listDrinks'
+]);
+
+Route::get('/drinks/categories/', [
+    'as' => 'drinks.categories',
+    'uses' => 'DrinkController@listCategories'
+]);
+
+Route::get('/drinks/random', [
+    'as' => 'drinks.random',
+    'uses' => 'DrinkController@randomDrinks'
+]);
