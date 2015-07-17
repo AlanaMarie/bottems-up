@@ -14,6 +14,7 @@ class DrinkController extends BaseController
 {
     use DispatchesJobs, ValidatesRequests;
 
+
     public function listDrinks()
     {
         return Response::Json(Drink::all())->setCallback(Input::get('callback'));
@@ -49,5 +50,19 @@ class DrinkController extends BaseController
         }
 
         return $categories;
+    }
+
+
+    public static function generateRandomDrinks()
+    {
+
+        $categories = DrinkController::getUniqueCategories();
+        $randomDrinks = [];
+        foreach ($categories as $category) {
+            $drink = Drink::where('category', $category)->order(DB::raw('RAND()'))->take(1)->get();
+            ConfigEntry::setKey('rnd_drink_' . $category, $drink->name);
+        }
+
+        return Response::Json($randomDrinks)->setCallback(Input::get('callback'));
     }
 }

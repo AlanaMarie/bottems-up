@@ -13,4 +13,16 @@ class ConfigEntry extends Model
     {
         return ConfigEntry::where('key', $key);
     }
+
+    public static function setKey($key, $value)
+    {
+        $entry = ConfigEntry::byKey($key);
+        if ($entry == null) {
+            $entry = new ConfigEntry();
+        }
+        $entry->key = $key;
+        $entry->value = $value;
+
+        return $entry;
+    }
 }
