@@ -29,3 +29,8 @@ Route::get('/drinks/random', [
     'as' => 'drinks.random',
     'uses' => 'DrinkController@randomDrinks'
 ]);
+
+Route::get('/drinks/random/regen', [
+    'as' => 'drinks.random',
+    'uses' => 'DrinkController@generateRandomDrinks'
+]);

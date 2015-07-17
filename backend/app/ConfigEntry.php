@@ -11,7 +11,7 @@ class ConfigEntry extends Model
 
     public static function byKey($key)
     {
-        return ConfigEntry::where('key', $key);
+        return ConfigEntry::where('key', $key)->first();
     }
 
     public static function setKey($key, $value)
@@ -22,7 +22,7 @@ class ConfigEntry extends Model
         }
         $entry->key = $key;
         $entry->value = $value;
-
+        $entry->save();
         return $entry;
     }
 }
