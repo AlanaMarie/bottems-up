@@ -21,8 +21,9 @@ All data is returned as JSON formatted text.
 
 ## Endpoints
 ### GET
-/drinks                 // list of all drinks
-/drinks/categories      // list all drink categories
-/drinks/hourly          // hourly drinks for each category
+- /drinks                 // list of all drinks
+- /drinks/categories      // list all drink categories
+- /drinks/hourly          // hourly drinks for each category
+
 
 ### POST
