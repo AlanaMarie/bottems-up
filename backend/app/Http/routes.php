@@ -15,12 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/drinks/', [
+Route::get('/drinks', [
     'as' => 'drinks.list',
     'uses' => 'DrinkController@listDrinks'
 ]);
 
-Route::get('/drinks/categories/', [
+Route::get('/drinks/categories', [
     'as' => 'drinks.categories',
     'uses' => 'DrinkController@listCategories'
 ]);

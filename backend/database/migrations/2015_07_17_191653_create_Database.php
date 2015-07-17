@@ -16,7 +16,6 @@ class CreateDatabase extends Migration
             $table->increments('id')->unique();
             $table->string('name')->unique();
             $table->string('category');
-            $table->string('password', 60);
             $table->rememberToken();
             $table->timestamps();
         });
