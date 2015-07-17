@@ -35,8 +35,10 @@ var drink = angular.module('drink', ['ngRoute', 'ngResource', 'ngStorage'])
 		var Drinks = $resource('drinks');
 		$scope.drinks = Drinks.query();
 
-		$scope.go = function(path) {
-			$scope.stor.user.type = path;
+		$scope.go = function(type) {
+			$scope.stor.user = {
+				type: type
+			};
 			$location.path('/settings');
 		};
 	}
